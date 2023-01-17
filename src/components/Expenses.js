@@ -1,9 +1,10 @@
 import React from 'react';
 import ExpenseItem from './ExpenseItem';
+import './Expenses.css'
 
 function Expenses(props) {
     return (
-        <div>
+        <div className='expenses'>
 
 { props.expenses.map((expense, index) => <ExpenseItem key={index} title={expense.title}
         amount={expense.amount}

@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses"
 
@@ -24,6 +25,8 @@ function App() {
       date: new Date(2021, 5, 12),
     }
   ];
+
+  console.log(expenses.length)
 
   return (
     <div className="expenses">

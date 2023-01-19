@@ -4,10 +4,13 @@ import ExpenseItem from './ExpenseItem';
 import './Expenses.css'
 
 function Expenses(props) {
+
+  const expenses = props.expenses
+  
     return (
         <Card className='expenses'>
 
-{ props.expenses.map((expense, index) => <ExpenseItem key={index} title={expense.title}
+{ expenses.map((expense, index) => <ExpenseItem key={index} title={expense.title}
         amount={expense.amount}
         date={expense.date}/>)
       }

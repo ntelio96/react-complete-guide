@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses"
+import NewExpense from "./components/NewExpense/NewExpense";
 
 
 function App() {
@@ -26,13 +27,15 @@ function App() {
     }
   ];
 
-  console.log(expenses.length)
 
   return (
-    <div className="expenses">
-      <Expenses  
+    <>
+    <NewExpense/>
+      <div className="expenses">
+        <Expenses  
         expenses = {expenses}/>
-    </div>
+      </div>
+    </>
   );
 }
 

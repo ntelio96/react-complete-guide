@@ -27,10 +27,13 @@ function App() {
     }
   ];
 
+  const addExpenseHandler = (expense) => {   // this is callback function from NewExpense to retrieve information entered from input
+    console.log(expense) 
+  }
 
   return (
     <>
-    <NewExpense/>
+    <NewExpense onAddExpense={addExpenseHandler}/>
       <div className="expenses">
         <Expenses  
         expenses = {expenses}/>

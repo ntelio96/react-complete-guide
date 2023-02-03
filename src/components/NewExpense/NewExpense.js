@@ -1,9 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import ExpenseForm from "./ExpenseForm"
 
 import './NewExpense.css'
 
 const NewExpense = (props) => {
+
+    const [toggleForm, setToggleForm] = useState(false)
+
+    const renderForm = () => {
+        setToggleForm(form => !form)
+    }
+
     const saveExpenseDataHandler = (enteredExpenseData) => { // callback function to retrieve data stored in ExpenseForm
         const expenseData = {
             ...enteredExpenseData,
@@ -14,7 +21,8 @@ const NewExpense = (props) => {
 
     return(
         <div className="new-expense">
-            <ExpenseForm onSaveExpenseData={saveExpenseDataHandler}/>
+            {toggleForm === true && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} renderForm={renderForm}/>} 
+            {toggleForm === false && <button onClick={renderForm}>Add expense</button>}
         </div>
     )
 }
